@@ -1,4 +1,19 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿const especieSelect = document.getElementById("especie");
+const seccionesEspecie = document.querySelectorAll(".campos-especie");
 
-// Write your JavaScript code.
+if (especieSelect) {
+    function actualizarCuestionario() {
+        seccionesEspecie.forEach((seccion) => {
+            const mostrar = seccion.id === `campos-${especieSelect.value}`;
+
+            seccion.hidden = !mostrar;
+
+            seccion.querySelectorAll("input, select").forEach((campo) => {
+                campo.disabled = !mostrar;
+            });
+        });
+    }
+
+    especieSelect.addEventListener("change", actualizarCuestionario);
+    actualizarCuestionario();
+}

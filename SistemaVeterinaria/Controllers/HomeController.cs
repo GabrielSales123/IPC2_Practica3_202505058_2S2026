@@ -6,6 +6,14 @@ namespace SistemaVeterinaria.Controllers;
 
 public class HomeController : Controller
 {
+
+    public class MascotasController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+    }
     public IActionResult Index()
     {
         return View();

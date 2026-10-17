@@ -1,3 +1,5 @@
+namespace SistemaVeterinaria.Models
+{
 public class Tortuga : Mascota
 {
     private string tipoCaparazon { get; set; }
@@ -34,4 +36,5 @@ public class Tortuga : Mascota
     {
         return peso*30*0.8;
     }
+}
 }

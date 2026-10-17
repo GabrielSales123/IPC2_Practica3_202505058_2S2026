@@ -1,3 +1,5 @@
+namespace SistemaVeterinaria.Models
+{
 public class Gato : Mascota
 {
     private bool esterilizado { get; set; }
@@ -35,4 +37,5 @@ public class Gato : Mascota
     {
         return peso*30*0.9;
     }
+}
 }
