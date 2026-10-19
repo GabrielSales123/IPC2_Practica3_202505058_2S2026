@@ -19,6 +19,194 @@ html {
 
 body {
   margin-bottom: 60px;
+  background: #f4f7f6;
+  color: #243432;
+}
+
+.container main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+.container main > h1 {
+  margin-bottom: 0.35rem;
+  color: #173f3a;
+  font-weight: 700;
+}
+
+.container main > p {
+  color: #64736f;
+}
+
+.container main > form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin: 1.5rem 0;
+  padding: clamp(1rem, 3vw, 1.75rem);
+  border: 1px solid #e1e9e6;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 5px 18px rgb(29 63 56 / 5%);
+}
+
+.container main > form h3 {
+  grid-column: 1 / -1;
+  margin: 0 0 0.5rem;
+  color: #173f3a;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.container main > form > label {
+  margin: 0;
+  color: #354743;
+  font-weight: 600;
+}
+
+.container main > form > input,
+.container main > form > select,
+.form-busqueda input {
+  width: 100%;
+  min-height: 42px;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #ccd8d4;
+  border-radius: 7px;
+  background-color: #fff;
+  color: #243432;
+}
+
+.container main > form > input:focus,
+.container main > form > select:focus,
+.form-busqueda input:focus {
+  border-color: #258477;
+  outline: 3px solid rgb(37 132 119 / 15%);
+}
+
+.campos-especie {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  align-items: center;
+  gap: 0.75rem 1rem;
+  padding: 1rem;
+  border: 1px solid #dcebe7;
+  border-radius: 9px;
+  background: #f7fbfa;
+}
+
+.campos-especie[hidden] {
+  display: none;
+}
+
+.container main > form > button {
+  grid-column: 2;
+  justify-self: start;
+  min-width: 160px;
+  margin-top: 0.25rem;
+  background-color: #21796e;
+  border-color: #21796e;
+}
+
+.container main > form > button:hover,
+#buscarMascota:hover {
+  background-color: #185f56;
+  border-color: #185f56;
+}
+
+.form-busqueda {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  align-items: center;
+  gap: 0.5rem 1rem;
+  max-width: 600px;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.form-busqueda label {
+  color: #354743;
+  font-weight: 600;
+}
+
+#buscarMascota {
+  margin-bottom: 0.5rem;
+  background-color: #21796e;
+  border-color: #21796e;
+}
+
+#mensajeBusqueda {
+  min-height: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #a33333;
+  font-size: 0.9rem;
+}
+
+.container main > table {
+  width: 100%;
+  margin: 1rem 0 2rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid #e1e9e6;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 5px 18px rgb(29 63 56 / 5%);
+}
+
+.container main > table th {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #dce5e2;
+  background-color: #f4f8f7;
+  color: #40534e;
+  font-size: 0.83rem;
+  letter-spacing: 0.04em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.container main > table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #edf1ef;
+}
+
+.container main > table tr:last-child td {
+  border-bottom: 0;
+}
+
+.container main > table a {
+  margin-right: 0.65rem;
+  color: #21796e;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.container main > table a:hover {
+  color: #154f48;
+  text-decoration: underline;
+}
+
+@media (max-width: 575.98px) {
+  .container main {
+    padding-top: 0.75rem;
+  }
+
+  .container main > form,
+  .campos-especie,
+  .form-busqueda {
+    grid-template-columns: 1fr;
+  }
+
+  .container main > form > button {
+    grid-column: 1;
+  }
+
+  .container main > table th,
+  .container main > table td {
+    padding: 0.65rem 0.5rem;
+  }
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {

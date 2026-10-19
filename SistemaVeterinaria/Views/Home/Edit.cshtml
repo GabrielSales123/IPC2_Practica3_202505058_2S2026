@@ -28,3 +28,9 @@
 
     <button type="submit">Guardar cambios</button>
 </form>
+
+<form asp-action="Eliminar" method="post"
+      onsubmit="return confirm('¿Seguro que deseas eliminar esta mascota?');">
+    <input type="hidden" name="id" value="@Model.GetCodigo()" />
+    <button type="submit" class="btn btn-danger">Eliminar mascota</button>
+</form>

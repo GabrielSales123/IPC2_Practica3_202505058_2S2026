@@ -56,6 +56,46 @@ public class ListaMascotas
         return null;
     }
 
+    public bool eliminarMascota(string codigo)
+    {
+        Nodo? actual = this.cabeza;
+
+        while (actual != null && actual.mascota.GetCodigo() != codigo)
+        {
+            actual = actual.siguiente;
+        }
+
+        if (actual == null)
+        {
+            return false;
+        }
+
+        if (actual.anterior == null)
+        {
+            this.cabeza = actual.siguiente;
+        }
+        else
+        {
+            actual.anterior.siguiente = actual.siguiente;
+        }
+
+        if (actual.siguiente == null)
+        {
+            this.cola = actual.anterior;
+        }
+        else
+        {
+            actual.siguiente.anterior = actual.anterior;
+        }
+
+        return true;
+    }
+
+    public string siguienteCodigo()
+    {
+        return $"ID{this.cont + 1:D4}";
+    }
+
     public int contMascotas()
     {
         return this.cont; 

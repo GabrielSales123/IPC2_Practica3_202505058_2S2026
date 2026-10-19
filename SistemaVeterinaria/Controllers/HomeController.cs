@@ -32,11 +32,11 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult Agregar(string especie, string nombre, 
     int peso, int edad, string sexo, string propietario, 
-    string codigo, bool enfermo, string? razaPerro, string? tamanoPerro,
+    bool enfermo, string? razaPerro, string? tamanoPerro,
     string? razaGato, bool? esterilizado, string? tipoCaparazon, bool? esAcuatica,
     int? envergadura, bool? volador )
     {
-        codigo = $"ID{mascotas.contMascotas() + 1:D4}";
+        string codigo = mascotas.siguienteCodigo();
         Mascota nuevaMascota;
         
 
@@ -104,4 +104,16 @@ public class HomeController : Controller
             mascota.SetEnfermo(enfermo);
             return RedirectToAction(nameof(Details), new { id });
     }   
+
+    [HttpPost]
+    public IActionResult Eliminar(string? id)
+    {
+        if (string.IsNullOrWhiteSpace(id))
+            return BadRequest();
+
+        if (!mascotas.eliminarMascota(id))
+            return NotFound();
+
+        return RedirectToAction(nameof(Index));
+    }
 }
