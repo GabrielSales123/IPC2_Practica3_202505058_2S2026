@@ -150,3 +150,12 @@ C:\Users\Andri\Documents\Repositorios\IPC2_Practica3_202505058_2S2026\SistemaVet
 C:\Users\Andri\Documents\Repositorios\IPC2_Practica3_202505058_2S2026\SistemaVeterinaria\bin\DeleteCounterVerification\SistemaVeterinaria.runtimeconfig.json
 C:\Users\Andri\Documents\Repositorios\IPC2_Practica3_202505058_2S2026\SistemaVeterinaria\bin\DeleteCounterVerification\SistemaVeterinaria.dll
 C:\Users\Andri\Documents\Repositorios\IPC2_Practica3_202505058_2S2026\SistemaVeterinaria\bin\DeleteCounterVerification\SistemaVeterinaria.pdb
+C:\Users\Andri\Documents\Repositorios\IPC2_Practica3_202505058_2S2026\SistemaVeterinaria\bin\AuditVerification\appsettings.Development.json
+C:\Users\Andri\Documents\Repositorios\IPC2_Practica3_202505058_2S2026\SistemaVeterinaria\bin\AuditVerification\appsettings.json
+C:\Users\Andri\Documents\Repositorios\IPC2_Practica3_202505058_2S2026\SistemaVeterinaria\bin\AuditVerification\SistemaVeterinaria.staticwebassets.runtime.json
+C:\Users\Andri\Documents\Repositorios\IPC2_Practica3_202505058_2S2026\SistemaVeterinaria\bin\AuditVerification\SistemaVeterinaria.staticwebassets.endpoints.json
+C:\Users\Andri\Documents\Repositorios\IPC2_Practica3_202505058_2S2026\SistemaVeterinaria\bin\AuditVerification\SistemaVeterinaria.exe
+C:\Users\Andri\Documents\Repositorios\IPC2_Practica3_202505058_2S2026\SistemaVeterinaria\bin\AuditVerification\SistemaVeterinaria.deps.json
+C:\Users\Andri\Documents\Repositorios\IPC2_Practica3_202505058_2S2026\SistemaVeterinaria\bin\AuditVerification\SistemaVeterinaria.runtimeconfig.json
+C:\Users\Andri\Documents\Repositorios\IPC2_Practica3_202505058_2S2026\SistemaVeterinaria\bin\AuditVerification\SistemaVeterinaria.dll
+C:\Users\Andri\Documents\Repositorios\IPC2_Practica3_202505058_2S2026\SistemaVeterinaria\bin\AuditVerification\SistemaVeterinaria.pdb
