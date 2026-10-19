@@ -1,0 +1,36 @@
+@model Mascota
+
+<h1>Detalles de @Model.GetNombre()</h1>
+
+<p><strong>Código:</strong> @Model.GetCodigo()</p>
+<p><strong>Nombre:</strong> @Model.GetNombre()</p>
+<p><strong>Peso:</strong> @Model.GetPeso()<strong>kg</strong></p>
+<p><strong>Edad:</strong> @Model.GetEdad()</p>
+<p><strong>Sexo:</strong> @Model.GetSexo()</p>
+<p><strong>Propietario:</strong> @Model.GetPropietario()</p>
+<p><strong>Enfermo:</strong> @Model.MostrarEnfermo()<strong>g</strong></p>
+<p><strong>Dosis de Medicina:</strong> @Model.CalcularDosis()</p>
+
+
+@if (Model is Perro perro)
+{
+    <p><strong>Raza:</strong> @perro.GetRaza()</p>
+    <p><strong>Tamaño:</strong> @perro.GetTamaño()</p>
+}
+else if (Model is Gato gato)
+{
+    <p><strong>Raza:</strong> @gato.GetRaza()</p>
+    <p><strong>Esterilizado:</strong> @gato.GetEsterilizado()</p>
+}
+else if (Model is Tortuga tortuga)
+{
+    <p><strong>Caparazón:</strong> @tortuga.GetTipoCaparazon()</p>
+    <p><strong>Acuática:</strong> @tortuga.GetEsAcuatica()</p>
+}
+else if (Model is Ave ave)
+{
+    <p><strong>Envergadura:</strong> @ave.GetEnvergadura()</p>
+    <p><strong>Puede volar:</strong> @ave.GetVolador()</p>
+}
+
+<a asp-action="Index">Volver</a>

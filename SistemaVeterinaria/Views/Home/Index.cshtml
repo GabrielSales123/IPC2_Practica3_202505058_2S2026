@@ -1,28 +1,18 @@
 ﻿
+@model IEnumerable<Mascota>
 @{
     ViewData["Title"] = "Sistema de Veterinaria";
     string nombreSistema = "Sistema de Veterinaria";
-    int totalMascotas = 0;
 }
 
     <h1>@nombreSistema</h1>
 
 <p>Bienvenido al sistema de administración de mascotas.</p>
 
-<p>Total de mascotas registradas: @totalMascotas</p>
-
-@if (totalMascotas == 0)
-{
-    <p>No hay mascotas registradas todavía.</p>
-}
-else
-{
-    <p>Ya existen mascotas registradas en el sistema.</p>
-}
-<form>
+<form asp-controller = "Home" asp-action="Agregar" method="post">
     <h3>Agregar mascota</h3>
     <label>Seleccione la especie</label>
-    <select id="especie" name="especie">
+    <select id="especie" name="especie"required onchange="mostrarCamposEspecie()">
     <option value="" selected disabled>Seleccione una especie</option>
     <option value="Perro">Perro</option>
     <option value="Gato">Gato</option>
@@ -30,20 +20,20 @@ else
     <option value="Ave">Ave</option>
     </select>
     <label>Nombre</label>
-    <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre de la mascota" />
+    <input type="text" id="nombre" name="nombre" required placeholder="Ingrese el nombre de la mascota" />
     <label>Peso</label>
-    <input type="text" id="peso" name="peso" placeholder="Ingrese el peso de la mascota" />
+    <input type="number" id="peso" name="peso" required placeholder="Ingrese el peso de la mascota" />
     <label>Edad</label>
-    <input type="text" id="edad" name="edad" placeholder="Ingrese la edad de la mascota"/>
+    <input type="number" id="edad" name="edad" required placeholder="Ingrese la edad de la mascota"/>
     <label>Sexo</label>
-    <input type="text" id="sexo" name="sexo" placeholder="Ingrese el sexo de la mascota"/>
+    <input type="text" id="sexo" name="sexo" required placeholder="Ingrese el sexo de la mascota"/>
     <label>Propietario</label>
-    <input type="text" id="propietario" name="propietario"placeholder="Ingrese el nombre del propietario"/>
-    <label>Estado</label>
-    <select id="estado" name="estado">
+    <input type="text" id="propietario" name="propietario" required placeholder="Ingrese el nombre del propietario"/>
+    <label for="enfermo">Estado</label>
+    <select id="enfermo" name="enfermo" required>
     <option value="" selected disabled>Seleccione el estado de la mascota</option>
-    <option value="Enfermo">Enfermo</option>
-    <option value="Sano">Sano</option>
+    <option value="true">Enfermo</option>
+    <option value="false">Sano</option>
     </select>
     <div id="campos-Perro" class="campos-especie" hidden>
     <label>Raza del perro</label>
@@ -87,3 +77,47 @@ else
 </div>
     <button type="submit">Agregar</button>
 </form>
+
+<div class="form-busqueda">
+    <label>Código</label>
+    <input type="text"
+    id="buscarCodigo"
+    placeholder="Ingrese el código de la mascota">
+</div>
+
+    <button type="button" id="buscarMascota" class="btn btn-primary">
+    Buscar por Código
+</button>
+<p id="mensajeBusqueda"></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mascota in Model)
+        {
+            <tr data-codigo="@mascota.GetCodigo()">
+                <td>@mascota.GetNombre()</td>
+                <td>@mascota.GetType().Name</td>
+                <td>@mascota.GetEnfermo()</td>
+                <td>
+                    <a asp-action="Details"
+                       asp-route-id="@mascota.GetCodigo()">
+                        Ver
+                    </a>
+
+                    <a asp-action="Edit"
+                       asp-route-id="@mascota.GetCodigo()">
+                        Editar
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

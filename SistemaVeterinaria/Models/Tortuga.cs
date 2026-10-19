@@ -2,8 +2,8 @@ namespace SistemaVeterinaria.Models
 {
 public class Tortuga : Mascota
 {
-    private string tipoCaparazon { get; set; }
-    private bool esAcuatica { get; set; }
+    private string tipoCaparazon;
+    private bool esAcuatica;
 
     public string GetTipoCaparazon() { return tipoCaparazon; }
     public void SetTipoCaparazon(string valor) { tipoCaparazon = valor; }

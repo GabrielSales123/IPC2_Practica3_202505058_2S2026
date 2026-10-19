@@ -1,0 +1,30 @@
+@model Mascota
+
+<h1>Editar @Model.GetNombre()</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="id" value="@Model.GetCodigo()" />
+
+    <label>Nombre</label>
+    <input name="nombre" value="@Model.GetNombre()" required />
+
+    <label>Peso</label>
+    <input type="number" name="peso" value="@Model.GetPeso()" required />
+
+    <label>Edad</label>
+    <input type="number" name="edad" value="@Model.GetEdad()" required />
+
+    <label>Sexo</label>
+    <input name="sexo" value="@Model.GetSexo()" required />
+
+    <label>Propietario</label>
+    <input name="propietario" value="@Model.GetPropietario()" required />
+
+    <label>Enfermo</label>
+    <select name="enfermo">
+        <option value="true">Sí</option>
+        <option value="false">No</option>
+    </select>
+
+    <button type="submit">Guardar cambios</button>
+</form>
